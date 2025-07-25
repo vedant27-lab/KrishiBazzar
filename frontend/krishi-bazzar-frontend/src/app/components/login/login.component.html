@@ -1,0 +1,39 @@
+<mat-card>
+  <h2>Login</h2>
+
+  <form #loginForm="ngForm" (ngSubmit)="login()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        name="email"
+        [(ngModel)]="email"
+        required
+        type="email"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        name="password"
+        [(ngModel)]="password"
+        required
+        type="password"
+      />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!loginForm.valid"
+    >
+      Login
+    </button>
+    <p>Don't have an accout? 
+        <a [routerLink]="['/register']">Register here</a>
+    </p>
+  </form>
+</mat-card>
